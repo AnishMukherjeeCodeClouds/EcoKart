@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/biodegradable.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/cart.css" />
+    <title>EcoKart</title>
+  </head>
+  <body>
+    <div
+      class="w-dvw min-h-dvh flex flex-col lg:grid lg:grid-cols-[1fr_1fr] p-7 lg:p-12 gap-6 lg:gap-12 lg:items-start relative"
+    >
+      <div class="lg:flex-1 flex flex-col">
+        <div class="flex justify-between items-center">
+          <h1 id="cart-heading" class="mb-3 flex items-center gap-3">
+            <span class="text-3xl font-bold">Your Cart</span>
+            <!-- <span class="text-blue-700 text-lg"></span> -->
+          </h1>
+          <a href="/index.html">
+            <button class="pb-2 cursor-pointer">
+              <i class="fa-solid fa-angle-left"></i><span>Back</span>
+            </button>
+          </a>
+        </div>
+        <div id="cart-items-holder" class="flex flex-col gap-6 grow"></div>
+      </div>
+      <div
+        id="right-side"
+        class="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-col gap-6 sticky top-10 flex-1 lg:self-start"
+      >
+        <div>
+          <h2 class="text-2xl font-bold mb-3">Cart Summary</h2>
+          <div
+            id="cart-summary"
+            class="bg-gray-100 rounded-md shadow shadow-black p-5"
+          ></div>
+          <div class="mt-3">
+            <h2 class="text-2xl font-bold mb-3">Discount coupon</h2>
+            <form
+              id="discount-form"
+              class="bg-gray-100 rounded-md shadow shadow-black p-5 flex flex-col lg:flex-row gap-2"
+            >
+              <input
+                required
+                placeholder="Enter discount coupon"
+                type="text"
+                class="basis-1/2 py-2 px-3 border border-gray-400 outline-none focus:border-black transition-all duration-300 rounded-sm bg-white placeholder:text-gray-600"
+              />
+              <button
+                type="submit"
+                class="grow bg-amber-700 hover:bg-amber-800 transition-all duration-300 text-white py-2 rounded-sm cursor-pointer"
+              >
+                Apply coupon
+              </button>
+            </form>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-3">Checkout</h2>
+          <form
+            id="checkout-form"
+            class="bg-gray-100 rounded-md shadow shadow-black p-5 flex flex-col gap-2"
+          >
+            <input
+              type="text"
+              name="payer-first-name"
+              placeholder="First Name"
+              class="py-2 px-3 border border-gray-400 outline-none focus:border-black transition-all duration-300 rounded-sm bg-white placeholder:text-gray-600"
+              required
+            />
+            <input
+              type="text"
+              name="payer-last-name"
+              placeholder="Last Name"
+              class="py-2 px-3 border border-gray-400 outline-none focus:border-black transition-all duration-300 rounded-sm bg-white placeholder:text-gray-600"
+              required
+            />
+            <input
+              type="email"
+              name="payer-email"
+              placeholder="Email Address"
+              class="py-2 px-3 border border-gray-400 outline-none focus:border-black transition-all duration-300 rounded-sm bg-white placeholder:text-gray-600"
+              required
+            />
+            <input
+              type="number"
+              name="payer-phone"
+              placeholder="Phone Number"
+              class="py-2 px-3 border border-gray-400 outline-none focus:border-black transition-all duration-300 rounded-sm bg-white placeholder:text-gray-600"
+              required
+            />
+            <input
+              type="text"
+              name="payer-addr"
+              placeholder="Address"
+              class="py-2 px-3 border border-gray-400 outline-none focus:border-black transition-all duration-300 rounded-sm bg-white placeholder:text-gray-600"
+              required
+            />
+            <button
+              type="submit"
+              class="bg-amber-700 hover:bg-amber-800 transition-all duration-300 text-white py-2 rounded-sm cursor-pointer"
+            >
+              Review order
+            </button>
+          </form>
+          <dialog
+            id="order-review"
+            class="open:m-auto w-sm md:w-xl p-5 shadow shadow-black rounded-md backdrop:backdrop-blur-lg"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 items-start">
+              <div class="items md:col-span-2">
+                <div class="grid grid-cols-6">
+                  <p class="text-gray-800 col-span-3 text-lg">Product name</p>
+                  <p class="text-gray-800 col-span-2 text-lg">Quantity</p>
+                  <p class="text-gray-800 text-lg">Total</p>
+                </div>
+                <div id="items-slot"></div>
+                <hr class="my-2" />
+                <div id="summary-slot"></div>
+              </div>
+              <div class="payer-details grid grid-cols-2"></div>
+            </div>
+            <div class="flex gap-2 mt-2">
+              <button class="py-2 text-white bg-green-700 rounded-md basis-1/2">
+                Confirm
+              </button>
+              <button class="py-2 text-white bg-red-700 rounded-md grow">
+                Cancel
+              </button>
+            </div>
+          </dialog>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/scripts/cart.ts"></script>
+  </body>
+</html>

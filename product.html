@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/biodegradable.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/product.css" />
+    <title>EcoKart</title>
+  </head>
+  <body>
+    <!-- md:w-1/2 lg:w-1/4 md:translate-x-1/2 lg:translate-x-0 lg:right-2 md:rounded-md-->
+    <header
+      class="bg-white/60 fixed top-0 z-[99999] w-full py-3 px-6 backdrop-blur-sm shadow-sm shadow-black rounded-b-md"
+    >
+      <nav class="flex justify-between items-center w-full">
+        <div></div>
+        <p class="text-lg lg:text-xl font-bold">EcoKart</p>
+        <a href="/cart.html" id="cart" class="relative inline-block">
+          <i class="fa-solid fa-cart-shopping text-xl"></i>
+          <span
+            id="cart-item-count"
+            class="absolute bg-purple-500 text-xs text-white rounded-full px-1.5 -top-2 -right-2"
+            >0</span
+          >
+        </a>
+      </nav>
+    </header>
+    <div
+      class="flex flex-col lg:grid lg:grid-cols-2 lg:place-items-center min-h-dvh w-dvw px-5 py-10 gap-5"
+    >
+      <div id="image-container" class="grid place-items-center">
+        <div
+          class="w-[300px] md:w-[500px] aspect-[4/3] overflow-hidden rounded-md shadow shadow-black"
+        ></div>
+      </div>
+      <div id="product-details" class="flex flex-col px-8 md:px-16">
+        <a href="/index.html">
+          <button class="pb-2 cursor-pointer">
+            <i class="fa-solid fa-angle-left"></i><span>Back</span>
+          </button>
+        </a>
+        <div id="details-container"></div>
+        <div class="flex flex-col gap-3 md:justify-between md:flex-row">
+          <div class="flex items-center gap-3">
+            <div class="flex items-start shadow shadow-black rounded-md">
+              <button
+                class="quantity-down bg-gray-800 hover:bg-gray-600 cursor-pointer rounded-l-md px-0.5"
+              >
+                <i class="fa-solid fa-minus text-white"></i>
+              </button>
+              <input
+                type="number"
+                value="1"
+                required
+                min="1"
+                max="50"
+                class="quantity-counter rounded-l-md outline-none focus:bg-white text-center w-[3ch] md:w-[5ch] !font-mono"
+              />
+              <button
+                class="quantity-up bg-gray-800 hover:bg-gray-600 cursor-pointer rounded-r-md px-0.5"
+              >
+                <i class="fa-solid fa-plus text-white"></i>
+              </button>
+            </div>
+            <button
+              id="add-to-cart-btn"
+              class="px-3 py-2 rounded-lg cursor-pointer text-center hover:italic hover:font-bold transition-all duration-300 bg-purple-400/40 hover:bg-purple-400/60 shadow shadow-black"
+            >
+              Add to Cart
+            </button>
+          </div>
+          <button
+            class="px-3 py-2 rounded-lg cursor-pointer text-center hover:italic hover:font-bold transition-all duration-300 bg-amber-700 hover:bg-amber-800 shadow shadow-black text-white"
+          >
+            <a href="/cart.html"> View cart </a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/scripts/product.ts"></script>
+  </body>
+</html>

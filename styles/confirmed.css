@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Chivo Mono", monospace;
+}
+
+* {
+  font-family: "Work Sans", sans-serif;
+}

@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-mono: "Chivo Mono", monospace;
+}
+
+* {
+  font-family: "Work Sans", sans-serif;
+}
+
+#cta a {
+  text-decoration: none;
+  &::after {
+    @apply shadow-sm shadow-black/70;
+
+    position: absolute;
+    bottom: -8%;
+    border-radius: 200px;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: white;
+
+    transition: width 400ms ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+#category-filter {
+  option {
+    @apply bg-white;
+  }
+}
