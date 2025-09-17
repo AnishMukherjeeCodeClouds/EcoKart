@@ -30,7 +30,7 @@ db.version(1).stores({
   order: "++id, userDetails",
 });
 
-db.order.hook("creating", (primKey, obj) => {
+db.order.hook("creating", (_, obj) => {
   obj.orderDate = new Date();
 });
 
