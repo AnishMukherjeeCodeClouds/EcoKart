@@ -60,7 +60,7 @@ function productHTML(product: (typeof products)[0]) {
           <div class="grow flex flex-col justify-between">
             <div class="flex justify-between items-center px-4 sm:px-6">
               <div class="flex flex-col items-start">
-                <p class="sm:text-sm md:text-lg font-medium max-w-[10ch] md:max-w-[15ch] lg:max-w-[15ch]">${
+                <p class="sm:text-sm md:text-lg font-medium max-w-[15ch]">${
                   product.name
                 }</p>
                 <p class="text-sm sm:text-base">${Array.from(
