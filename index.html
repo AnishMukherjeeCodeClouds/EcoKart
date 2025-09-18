@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoKart</title>
   </head>
-  <body class="overflow-y-auto">
+  <body class="overflow-y-auto max-w-dvw">
     <header
       class="bg-white/60 fixed z-[99999] w-full py-3 px-6 backdrop-blur-sm shadow-sm shadow-black rounded-b-md transition-all duration-500 opacity-0 pointer-events-none md:w-1/2 lg:w-1/4 md:translate-x-1/2 lg:translate-x-0 lg:right-2 md:top-2 md:rounded-md"
     >
@@ -41,7 +41,7 @@
     <main class="pb-20">
       <section
         id="hero"
-        class="relative w-dvw h-dvh overflow-hidden shadow-lg shadow-black rounded-b-xl mb-10"
+        class="relative w-full h-dvh overflow-hidden shadow-lg shadow-black rounded-b-xl mb-10"
       >
         <!-- Image -->
         <img
@@ -88,27 +88,28 @@
         </div>
       </section>
 
-      <section id="filters" class="container mx-auto p-3 flex justify-center">
-        <div class="flex gap-3 w-full md:w-2xl">
-          <p
-            id="filter-clear"
-            class="cursor-pointer p-1 shadow shadow-black rounded-full"
-          >
-            <i class="fa-solid fa-eraser"></i>
-          </p>
-          <select
-            id="category-filter"
-            class="cursor-pointer grow shadow shadow-black px-3 py-1 rounded-full truncate"
-          >
-            <option value="" disabled selected hidden>Categories</option>
-          </select>
-          <input
-            id="product-search"
-            type="search"
-            placeholder="🔎 Name"
-            class="px-3 py-1 rounded-full shadow shadow-black focus:outline-none w-[20ch] md:w-[35ch] lg:w-[40ch]"
-          />
-        </div>
+      <section
+        id="filters"
+        class="flex px-3 gap-3 w-sm md:w-md lg:w-xl mx-auto"
+      >
+        <p
+          id="filter-clear"
+          class="cursor-pointer p-1 shadow shadow-black rounded-full"
+        >
+          <i class="fa-solid fa-eraser"></i>
+        </p>
+        <input
+          id="product-search"
+          type="search"
+          placeholder="🔎 Name"
+          class="px-3 py-1 rounded-full shadow shadow-black focus:outline-none w-[15ch] md:w-[20ch] lg:w-[30ch]"
+        />
+        <select
+          id="category-filter"
+          class="min-w-0 w-full grow cursor-pointer shadow shadow-black px-3 py-1 rounded-full truncate"
+        >
+          <option value="" disabled selected hidden>Categories</option>
+        </select>
       </section>
       <section
         id="products"
