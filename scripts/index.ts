@@ -78,18 +78,18 @@ function productHTML(product: (typeof products)[0]) {
               </div>
             </div>
             <div class="flex mt-2 rounded-b-md">
-              <div
+              <button
                 id="view-product"
                 class="py-1 cursor-pointer text-center hover:italic hover:font-bold transition-all duration-300 bg-amber-700 basis-5/12 hover:bg-amber-800 text-white rounded-bl-md"
               >
                 View
-              </div>
-              <div
+              </button>
+              <button
               id="add-to-cart-btn"
                 class="py-1 cursor-pointer text-center hover:italic hover:font-bold transition-all duration-300 bg-purple-400/40 hover:bg-purple-400/60 grow"
               >
                 Add to cart
-              </div>
+              </button>
             </div>
           </div>
         </div>`;

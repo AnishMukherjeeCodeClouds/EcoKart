@@ -52,7 +52,7 @@ const productDetailsContainer =
   document.querySelector<HTMLDivElement>("#details-container")!;
 
 console.log(product?.img);
-imageContainer.innerHTML = `<img src=${product?.img} alt=${product?.name} class="h-full w-full object-contain rounded-md hover:scale-[1.08] transition-all duration-300" />`;
+imageContainer.innerHTML = `<img src=${product?.img} alt=${product?.name} class="h-full w-full object-cover rounded-md hover:scale-[1.08] transition-all duration-300" />`;
 
 // Top details
 const topDetailsDiv = document.createElement("div");
